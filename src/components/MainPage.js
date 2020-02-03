@@ -16,7 +16,7 @@ const MainPage = () => {
               "Smartphone",
               "Drone",
               "Headphones",
-              "Hoverboard",
+              "lenses",
               "Speakers"
             ]}
           />
