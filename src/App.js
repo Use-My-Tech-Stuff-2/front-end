@@ -1,24 +1,39 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Switch, Route } from "react-router-dom";
 import "./App.css";
+import Navbar from "./components/Navbar";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+import Lost from "./components/Lost";
+import MainPage from "./components/MainPage";
+import EquipmentUploadForm from "./components/EquipmentUploadForm";
+import Profile from "./components/Profile";
 
-function App() {
+export default function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <h1>Use My Tech Stuff</h1>
-        <p>Hello</p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'>
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Navbar />
+      <Switch>
+        <Route path='/EquipmentUpload'>
+          <EquipmentUploadForm />
+        </Route>
+        <Route exact path='/'>
+          <MainPage />
+        </Route>
+        <Route path='/login'>
+          <Login />
+        </Route>
+        <Route path='/signup'>
+          <SignUp />
+        </Route>
+        <Route path=''>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+        <Route path="">
+          <Lost />
+        </Route>
+      </Switch>
+    </main>
   );
 }
-
-export default App;
